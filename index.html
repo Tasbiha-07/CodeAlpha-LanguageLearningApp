@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinguaLearn - Language Learning App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>LinguaLearn 🇪🇸</h1>
+      <p>Master Spanish vocabulary and grammar</p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tab-nav">
+      <button class="tab-btn active" id="tab-learn-btn">Learn</button>
+      <button class="tab-btn" id="tab-quiz-btn">Quiz Mode</button>
+    </nav>
+
+    <!-- Category Filter -->
+    <section class="category-selector">
+      <label for="category-select">Category:</label>
+      <select id="category-select">
+        <option value="vocabulary">Vocabulary</option>
+        <option value="grammar">Grammar & Phrases</option>
+      </select>
+    </section>
+
+    <!-- Flashcard / Lesson Mode Screen -->
+    <section id="learn-section" class="screen-section">
+      <div class="flashcard" id="lesson-card">
+        <span class="category-tag" id="card-tag">Vocabulary</span>
+        <h2 id="foreign-word">Hola</h2>
+        <p class="pronunciation" id="pronunciation">/ˈo.la/</p>
+        <button id="speak-btn" class="icon-btn" title="Listen pronunciation">🔊 Listen</button>
+        <hr />
+        <div class="meaning-box">
+          <span class="meaning-label">English Translation:</span>
+          <p id="english-translation">Hello</p>
+        </div>
+      </div>
+
+      <div class="card-controls">
+        <button id="prev-card-btn" class="btn">Previous</button>
+        <span id="lesson-counter">1 / 5</span>
+        <button id="next-card-btn" class="btn">Next</button>
+      </div>
+    </section>
+
+    <!-- Interactive Quiz Mode Screen -->
+    <section id="quiz-section" class="screen-section" style="display: none;">
+      <div class="quiz-card">
+        <div class="quiz-header">
+          <span id="quiz-progress">Question 1 of 5</span>
+          <span id="quiz-score-display">Score: 0</span>
+        </div>
+        <h3 id="quiz-question">What is the meaning of "Hola"?</h3>
+        
+        <div id="options-container" class="options-grid"></div>
+
+        <div id="feedback-msg" class="feedback-msg"></div>
+
+        <button id="next-question-btn" class="btn btn-primary" style="display: none;">Next Question</button>
+        <button id="restart-quiz-btn" class="btn btn-secondary" style="display: none;">Restart Quiz</button>
+      </div>
+    </section>
+
+    <!-- Progress Tracker Footer -->
+    <footer>
+      <p>Questions Answered: <span id="total-answered">0</span> | Best Score: <span id="best-score">0</span></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+:root {
+  --primary: #4338ca;
+  --primary-hover: #3730a3;
+  --secondary: #64748b;
+  --bg-color: #f1f5f9;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --accent-green: #16a34a;
+  --accent-red: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.app-container {
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.75rem;
+  color: var(--primary);
+}
+
+header p {
+  color: var(--secondary);
+  font-size: 0.95rem;
+}
+
+/* Tabs */
+.tab-nav {
+  display: flex;
+  background-color: #e2e8f0;
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 0.6rem 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 8px;
+  color: var(--secondary);
+  transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+  background-color: #fff;
+  color: var(--primary);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.category-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card-bg);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+}
+
+select {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.9rem;
+}
+
+/* Cards */
+.flashcard, .quiz-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.category-tag {
+  display: inline-block;
+  background-color: #e0e7ff;
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+#foreign-word {
+  font-size: 2.2rem;
+  color: var(--primary);
+}
+
+.pronunciation {
+  color: var(--secondary);
+  font-style: italic;
+  margin: 0.4rem 0 1rem;
+}
+
+.icon-btn {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.icon-btn:hover {
+  background: #e2e8f0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #f1f5f9;
+  margin: 1.25rem 0;
+}
+
+.meaning-label {
+  font-size: 0.8rem;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#english-translation {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 0.35rem;
+}
+
+.card-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.15s ease;
+}
+
+.btn:hover {
+  background: #f8fafc;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Quiz Specific */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--secondary);
+  margin-bottom: 1.2rem;
+}
+
+#quiz-question {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.option-btn {
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.option-btn:hover:not(:disabled) {
+  background: #e2e8f0;
+}
+
+.option-btn.correct {
+  background: #dcfce7;
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+}
+
+.option-btn.incorrect {
+  background: #fee2e2;
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+}
+
+.feedback-msg {
+  margin-top: 1rem;
+  font-weight: 600;
+  min-height: 24px;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--secondary);
+}
